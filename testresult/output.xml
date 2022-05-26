@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20220526 18:05:49.486" rpa="false" schemaversion="2">
+<suite id="s1" name="Add To Do List" source="C:\Users\phrownapha.tue\Desktop\Bluepi_test\testcases\add_to_do_list.robot">
+<test id="s1-t1" name="Add To Do Tasks - success">
+<kw name="Given User go to website" library="to_do_list">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${TO_DO_LIST_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to given URL.</doc>
+<msg timestamp="20220526 18:05:49.995" level="INFO">Opening browser 'chrome' to base url 'https://abhigyank.github.io/To-Do-List/'</msg>
+<status status="PASS" starttime="20220526 18:05:49.995" endtime="20220526 18:05:51.745"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220526 18:05:51.745" endtime="20220526 18:05:51.857"/>
+</kw>
+<status status="PASS" starttime="20220526 18:05:49.994" endtime="20220526 18:05:51.857"/>
+</kw>
+<kw name="When User add to do tasks &quot;${TO_DO_LIST_EXAMPLE['A']}&quot;" library="to_do_list" sourcename="User add to do tasks &quot;${keyword}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${to_do_list['add_item']['field_input_task']}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220526 18:05:51.859" level="INFO">Typing text 'ทำความสะอาดบ้าน' into text field '//input[@id="new-task"]'</msg>
+<status status="PASS" starttime="20220526 18:05:51.858" endtime="20220526 18:05:51.961"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['add_item']['btn_add_task']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:05:51.965" level="INFO">Clicking element '//i[@class="material-icons"]'.</msg>
+<status status="PASS" starttime="20220526 18:05:51.961" endtime="20220526 18:05:52.004"/>
+</kw>
+<status status="PASS" starttime="20220526 18:05:51.858" endtime="20220526 18:05:52.005"/>
+</kw>
+<kw name="And Verify that add to do tasks success" library="to_do_list">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['tab_to_do_tasks']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:05:52.006" level="INFO">Clicking element '//a[@class="mdl-tabs__tab" and (contains(text(),'To-Do Tasks'))]'.</msg>
+<status status="PASS" starttime="20220526 18:05:52.005" endtime="20220526 18:05:52.044"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['txt_to_do_tasks']}</arg>
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<msg timestamp="20220526 18:05:52.056" level="INFO">Current page contains element '//span[@id="text-1"]'.</msg>
+<status status="PASS" starttime="20220526 18:05:52.045" endtime="20220526 18:05:52.056"/>
+</kw>
+<status status="PASS" starttime="20220526 18:05:52.005" endtime="20220526 18:05:52.056"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220526 18:05:52.057" endtime="20220526 18:05:54.192"/>
+</kw>
+<tag>addtasks</tag>
+<tag>todo</tag>
+<status status="PASS" starttime="20220526 18:05:49.993" endtime="20220526 18:05:54.193"/>
+</test>
+<test id="s1-t2" name="Delete To Do Task - success">
+<kw name="Given User go to website" library="to_do_list">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${TO_DO_LIST_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to given URL.</doc>
+<msg timestamp="20220526 18:05:54.197" level="INFO">Opening browser 'chrome' to base url 'https://abhigyank.github.io/To-Do-List/'</msg>
+<status status="PASS" starttime="20220526 18:05:54.197" endtime="20220526 18:05:56.752"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220526 18:05:56.752" endtime="20220526 18:05:56.863"/>
+</kw>
+<status status="PASS" starttime="20220526 18:05:54.195" endtime="20220526 18:05:56.864"/>
+</kw>
+<kw name="When User add to do tasks &quot;${TO_DO_LIST_EXAMPLE['B']}&quot;" library="to_do_list" sourcename="User add to do tasks &quot;${keyword}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${to_do_list['add_item']['field_input_task']}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220526 18:05:56.866" level="INFO">Typing text 'ล้างห้องน้ำ' into text field '//input[@id="new-task"]'</msg>
+<status status="PASS" starttime="20220526 18:05:56.865" endtime="20220526 18:05:56.959"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['add_item']['btn_add_task']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:05:56.961" level="INFO">Clicking element '//i[@class="material-icons"]'.</msg>
+<status status="PASS" starttime="20220526 18:05:56.960" endtime="20220526 18:05:57.000"/>
+</kw>
+<status status="PASS" starttime="20220526 18:05:56.864" endtime="20220526 18:05:57.000"/>
+</kw>
+<kw name="And Verify that add to do tasks success" library="to_do_list">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['tab_to_do_tasks']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:05:57.001" level="INFO">Clicking element '//a[@class="mdl-tabs__tab" and (contains(text(),'To-Do Tasks'))]'.</msg>
+<status status="PASS" starttime="20220526 18:05:57.001" endtime="20220526 18:05:57.042"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['txt_to_do_tasks']}</arg>
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<msg timestamp="20220526 18:05:57.052" level="INFO">Current page contains element '//span[@id="text-1"]'.</msg>
+<status status="PASS" starttime="20220526 18:05:57.042" endtime="20220526 18:05:57.052"/>
+</kw>
+<status status="PASS" starttime="20220526 18:05:57.000" endtime="20220526 18:05:57.053"/>
+</kw>
+<kw name="And User delete to do task in TO-DO TASKS Tab" library="to_do_list">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['btn_delete_to_do_task']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:05:57.055" level="INFO">Clicking element '//button[@data-upgraded=",MaterialButton,MaterialRipple" and (contains(text(),'Delete'))]'.</msg>
+<status status="PASS" starttime="20220526 18:05:57.054" endtime="20220526 18:05:57.094"/>
+</kw>
+<status status="PASS" starttime="20220526 18:05:57.053" endtime="20220526 18:05:57.094"/>
+</kw>
+<kw name="Then Verify that not show task in TO-DO TASKS Tab" library="to_do_list">
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['btn_delete_to_do_task']}</arg>
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<msg timestamp="20220526 18:05:57.104" level="INFO">Current page does not contain element '//button[@data-upgraded=",MaterialButton,MaterialRipple" and (contains(text(),'Delete'))]'.</msg>
+<status status="PASS" starttime="20220526 18:05:57.096" endtime="20220526 18:05:57.104"/>
+</kw>
+<status status="PASS" starttime="20220526 18:05:57.095" endtime="20220526 18:05:57.104"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220526 18:05:57.104" endtime="20220526 18:05:59.247"/>
+</kw>
+<tag>addtasks</tag>
+<tag>todo</tag>
+<status status="PASS" starttime="20220526 18:05:54.194" endtime="20220526 18:05:59.248"/>
+</test>
+<test id="s1-t3" name="Check complete and delete To Do Task in COMPLATED Tab - success">
+<kw name="Given User go to website" library="to_do_list">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${TO_DO_LIST_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to given URL.</doc>
+<msg timestamp="20220526 18:05:59.251" level="INFO">Opening browser 'chrome' to base url 'https://abhigyank.github.io/To-Do-List/'</msg>
+<status status="PASS" starttime="20220526 18:05:59.251" endtime="20220526 18:06:01.022"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220526 18:06:01.022" endtime="20220526 18:06:01.132"/>
+</kw>
+<status status="PASS" starttime="20220526 18:05:59.250" endtime="20220526 18:06:01.132"/>
+</kw>
+<kw name="When User add to do tasks &quot;${TO_DO_LIST_EXAMPLE['B']}&quot;" library="to_do_list" sourcename="User add to do tasks &quot;${keyword}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${to_do_list['add_item']['field_input_task']}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220526 18:06:01.135" level="INFO">Typing text 'ล้างห้องน้ำ' into text field '//input[@id="new-task"]'</msg>
+<status status="PASS" starttime="20220526 18:06:01.135" endtime="20220526 18:06:01.233"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['add_item']['btn_add_task']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:06:01.234" level="INFO">Clicking element '//i[@class="material-icons"]'.</msg>
+<status status="PASS" starttime="20220526 18:06:01.233" endtime="20220526 18:06:01.277"/>
+</kw>
+<status status="PASS" starttime="20220526 18:06:01.134" endtime="20220526 18:06:01.277"/>
+</kw>
+<kw name="And Verify that add to do tasks success" library="to_do_list">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['tab_to_do_tasks']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:06:01.278" level="INFO">Clicking element '//a[@class="mdl-tabs__tab" and (contains(text(),'To-Do Tasks'))]'.</msg>
+<status status="PASS" starttime="20220526 18:06:01.278" endtime="20220526 18:06:01.315"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['txt_to_do_tasks']}</arg>
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<msg timestamp="20220526 18:06:01.329" level="INFO">Current page contains element '//span[@id="text-1"]'.</msg>
+<status status="PASS" starttime="20220526 18:06:01.315" endtime="20220526 18:06:01.329"/>
+</kw>
+<status status="PASS" starttime="20220526 18:06:01.277" endtime="20220526 18:06:01.329"/>
+</kw>
+<kw name="And User checkbox to do tasks success" library="to_do_list">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['txt_to_do_tasks']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:06:01.331" level="INFO">Clicking element '//span[@id="text-1"]'.</msg>
+<status status="PASS" starttime="20220526 18:06:01.330" endtime="20220526 18:06:01.368"/>
+</kw>
+<status status="PASS" starttime="20220526 18:06:01.330" endtime="20220526 18:06:01.368"/>
+</kw>
+<kw name="Then TO-DO TASKS is show in COMPLATED Tab" library="to_do_list">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['completed']['tab_completed']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:06:01.371" level="INFO">Clicking element '//a[@class="mdl-tabs__tab" and (contains(text(),'Completed'))]'.</msg>
+<status status="PASS" starttime="20220526 18:06:01.370" endtime="20220526 18:06:01.413"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${to_do_list['completed']['txt_to_do_tasks_completed']}</arg>
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<msg timestamp="20220526 18:06:01.423" level="INFO">Current page contains element '//span[@class="mdl-list__item-primary-content"]'.</msg>
+<status status="PASS" starttime="20220526 18:06:01.413" endtime="20220526 18:06:01.423"/>
+</kw>
+<status status="PASS" starttime="20220526 18:06:01.369" endtime="20220526 18:06:01.423"/>
+</kw>
+<kw name="And User delete to do task in COMPLATED Tab" library="to_do_list">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${to_do_list['to_do_task']['btn_delete_to_do_task']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220526 18:06:01.425" level="INFO">Clicking element '//button[@data-upgraded=",MaterialButton,MaterialRipple" and (contains(text(),'Delete'))]'.</msg>
+<status status="PASS" starttime="20220526 18:06:01.424" endtime="20220526 18:06:01.463"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${to_do_list['completed']['txt_to_do_tasks_completed']}</arg>
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<msg timestamp="20220526 18:06:01.469" level="INFO">Current page does not contain element '//span[@class="mdl-list__item-primary-content"]'.</msg>
+<status status="PASS" starttime="20220526 18:06:01.463" endtime="20220526 18:06:01.469"/>
+</kw>
+<status status="PASS" starttime="20220526 18:06:01.423" endtime="20220526 18:06:01.469"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220526 18:06:01.471" endtime="20220526 18:06:03.598"/>
+</kw>
+<tag>addtasks</tag>
+<tag>todo</tag>
+<status status="PASS" starttime="20220526 18:05:59.249" endtime="20220526 18:06:03.599"/>
+</test>
+<status status="PASS" starttime="20220526 18:05:49.488" endtime="20220526 18:06:03.601"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">addtasks</stat>
+<stat pass="3" fail="0" skip="0">todo</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Add To Do List">Add To Do List</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

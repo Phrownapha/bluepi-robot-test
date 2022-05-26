@@ -1,0 +1,18 @@
+to_do_list:
+  add_item:
+    tab_add_item: //a[@class="mdl-tabs__tab" and (contains(text(),'Add Item'))]
+    field_input_task: //input[@id="new-task"]
+    btn_add_task: //i[@class="material-icons"]
+  
+  to_do_task:
+    tab_to_do_tasks: //a[@class="mdl-tabs__tab" and (contains(text(),'To-Do Tasks'))]
+    txt_to_do_tasks: //span[@id="text-1"]
+    btn_delete_to_do_task: //button[@data-upgraded=",MaterialButton,MaterialRipple" and (contains(text(),'Delete'))]
+    checkbox_completed: //span[@class="mdl-checkbox__tick-outline"]
+
+  completed:
+    tab_completed: //a[@class="mdl-tabs__tab" and (contains(text(),'Completed'))]
+    icon_sucess: //i[@class="material-icons mdl-list__item-icon"]
+    txt_to_do_task: //span[@class="mdl-list__item-primary-content"]
+    txt_to_do_tasks_completed: //span[@class="mdl-list__item-primary-content"]
+
